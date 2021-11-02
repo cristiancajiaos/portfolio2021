@@ -1,7 +1,16 @@
 <header>
-  Header
+  <img class="profile-img mb-4" src="assets/img/perfil.jpg"/>
+
+  <h4 class="text-uppercase mb-4">Cristian Cajiao Skarnic</h4>
+
+  <hr/>
+
   <ul>
-    <li><a href="#" routerLink="projects">Projects</a></li>
-    <li><a href="#" routerLink="contact">Contact</a></li>
+    <li><a href="#" routerLink="projects" [routerLinkActive]="'active'">Proyectos</a>
+    </li>
+    <li><a href="#" routerLink="contact" [routerLinkActive]="'active'">Contacto</a>
+    </li>
   </ul>
+
+  <hr/>
 </header>
