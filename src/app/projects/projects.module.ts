@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
+import { ProjectMiniComponent } from './project-mini/project-mini.component';
 
 
 @NgModule({
   declarations: [
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectMiniComponent
   ],
   imports: [
     CommonModule,
