@@ -1,5 +1,7 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
@@ -15,7 +17,9 @@ import { ProjectComponent } from './project/project.component';
   ],
   imports: [
     CommonModule,
-    ProjectsRoutingModule
+    ProjectsRoutingModule,
+    NgbModule,
+    NgImageFullscreenViewModule
   ]
 })
 export class ProjectsModule { }

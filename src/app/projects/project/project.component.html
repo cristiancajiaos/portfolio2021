@@ -1,1 +1,64 @@
-<p>project works!</p>
+<section class="project">
+  <header [ngStyle]="currentBackgroundProperties">
+    <h1 class="text-uppercase">Título del proyecto</h1>
+    <a ngbTooltip="Ver imagen a pantalla completa" placement="bottom" (click)="showLightbox(0)">
+      <i class="fas fa-search-plus fa-fw"></i>
+    </a>
+  </header>
+
+  <main>
+    <section class="basic-info">
+      <div class="d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
+        <div class="mb-4">
+          <i class="fab fa-2x fa-html5 fa-fw"
+            ngbTooltip="Para este proyecto se usó HTML5"></i>
+          <i class="fab fa-2x fa-css3 fa-fw" ngbTooltip="Para este proyecto se usó CSS3"></i>
+          <i class="fab fa-2x fa-js fa-fw" ngbTooltip="Para este proyecto se usó JavaScript/TypeScript"></i>
+          <i class="fab fa-2x fa-angular fa-fw" ngbTooltip="Para este proyecto se usó Angular 12"></i>
+          <i class="fab fa-2x fa-sass fa-fw" ngbTooltip="Para este proyecto se usó SASS con sintaxis SCSS"></i>
+          <i class="fab fa-2x fa-bootstrap fa-fw" ngbTooltip="Para este proyecto se usó Bootstrap 5"></i>
+        </div>
+        <div class="mb-4">
+          <a class="sample-link" href="#" ngbTooltip="Está disponible una muestra de este proyecto. Haz click para abrirlo. Se abrirá en una pestaña nueva.">
+            <i class="fas fa-external-link-square-alt fa-fw"></i> Probar este proyecto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="description">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet tortor quis dapibus congue. Quisque ac
+        molestie ex, aliquam placerat est. Sed consequat dui auctor tellus efficitur commodo. Aenean tincidunt malesuada
+        maximus. Morbi consectetur tortor quis libero iaculis, ac dictum nisl lobortis. Orci varius natoque penatibus et
+        magnis dis parturient montes, nascetur ridiculus mus. Mauris gravida lectus ante, ac tincidunt purus congue et.</p>
+
+      <p>Donec eleifend mauris ex, at rhoncus sapien dapibus vitae. Aenean vel dolor quis lorem pulvinar mattis eget quis
+        elit. Mauris vel scelerisque felis. Integer tristique, ipsum in lobortis euismod, velit purus laoreet quam, quis
+        vestibulum risus lectus eget nisl. In eget eros metus. Proin eget neque sollicitudin, faucibus purus a, eleifend
+        nisi. Donec semper eu ipsum quis tincidunt. Morbi ut vehicula massa, eu iaculis nibh. Nullam ullamcorper non
+        nisl non mattis. Donec tempor lorem at blandit tristique.</p>
+
+      <p>Curabitur vehicula dolor quis elit ornare consectetur. Morbi ut porta augue. Donec sit amet ullamcorper dolor.
+        Fusce semper, felis id tristique vulputate, libero dolor molestie nunc, non sodales nulla turpis ut nisl. Sed
+        interdum fermentum felis at rhoncus. Ut id nunc ac sem pulvinar pulvinar eu vitae eros. Phasellus volutpat at
+        lectus quis porta. Quisque et porttitor metus. Mauris quam tellus, suscipit eu pellentesque in, vehicula et
+        urna. Maecenas eros sem, pharetra eget mauris nec, porta rutrum eros. Sed eu malesuada lacus. Ut sed velit nisi.
+      </p>
+    </section>
+  </main>
+
+  <hr/>
+
+  <footer>
+    <a class="return" [routerLink]="'/projects'">
+      <i class="fas fa-angle-double-left"></i> Volver a Proyectos
+    </a>
+  </footer>
+</section>
+
+<ng-image-fullscreen-view
+  [images]="imageObject"
+  [imageIndex]="selectedImageIndex"
+  [show]="showFlag"
+  (close)="closeEventHandler()">
+</ng-image-fullscreen-view>
