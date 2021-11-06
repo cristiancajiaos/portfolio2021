@@ -1,16 +1,46 @@
 <header>
-  <img class="profile-img mb-4" src="assets/img/perfil.jpg"/>
+  <section class="header-less-than-lg">
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/" href="#">
+          <img class="navbar-img" src="assets/img/perfil.jpg"/>
+        </a>
+        <button class="navbar-toggler" (click)="toggleCollapse()">
+          <i class="fas fa-bars fa-fw"></i>
+        </button>
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+          <span class="navbar-text fw-bold">Cristian Cajiao Skarnic</span>
+          <hr/>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="projects" [routerLinkActive]="'active'" href="#">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="contact" [routerLinkActive]="'active'" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
 
-  <h4 class="text-uppercase mb-4">Cristian Cajiao Skarnic</h4>
+  <section class="header-lg">
+    <img class="profile-img mb-4" src="assets/img/perfil.jpg" />
 
-  <hr/>
+    <h4 class="text-uppercase mb-4 font-weight-bold">Cristian Cajiao Skarnic</h4>
 
-  <ul>
-    <li><a href="#" routerLink="projects" [routerLinkActive]="'active'">Proyectos</a>
-    </li>
-    <li><a href="#" routerLink="contact" [routerLinkActive]="'active'">Contacto</a>
-    </li>
-  </ul>
+    <hr />
 
-  <hr/>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="projects" [routerLinkActive]="'active'">Proyectos</a>
+        </li>
+        <li><a href="#" routerLink="contact" [routerLinkActive]="'active'">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <hr />
+  </section>
 </header>
+
