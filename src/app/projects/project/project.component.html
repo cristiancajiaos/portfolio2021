@@ -2,7 +2,7 @@
   <header [ngStyle]="currentBackgroundProperties">
     <h1 class="text-uppercase">Título del proyecto</h1>
     <a ngbTooltip="Ver imagen a pantalla completa" placement="bottom" (click)="showLightbox(0)">
-      <i class="fas fa-search-plus fa-fw"></i>
+      <i class="fas fa-expand fa-fw"></i>
     </a>
   </header>
 
@@ -19,7 +19,8 @@
           <i class="fab fa-2x fa-bootstrap fa-fw" ngbTooltip="Para este proyecto se usó Bootstrap 5"></i>
         </div>
         <div class="mb-4">
-          <a class="sample-link" href="#" ngbTooltip="Está disponible una muestra de este proyecto. Haz click para abrirlo. Se abrirá en una pestaña nueva.">
+          <a href="#" target="_blank" class="sample-link"
+            ngbTooltip="Está disponible una muestra de este proyecto. Haz click para abrirlo. Se abrirá en una pestaña nueva.">
             <i class="fas fa-external-link-square-alt fa-fw"></i> Probar este proyecto
           </a>
         </div>
