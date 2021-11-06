@@ -4,8 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProjectsComponent } from './projects.component';
 
 const routes: Routes = [
-  { path: '', component: ProjectsComponent },
-  { path: ':id', component: ProjectComponent}
+  {
+    path: '',
+    component: ProjectsComponent,
+    data: {
+      title: 'Proyectos'
+    }
+  },
+  {
+    path: ':id',
+    component: ProjectComponent,
+    data: {
+      title: 'Proyecto'
+    }
+  }
 ];
 
 @NgModule({
