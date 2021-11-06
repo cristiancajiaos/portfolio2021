@@ -1,5 +1,5 @@
-<section class="projects">
-  <div class="row" *ngIf="!loading; else loadingProjects">
+<section class="projects" *ngIf="!loading; else loadingProjects">
+  <div class="row">
     <div class="col-12 col-lg-6" *ngFor="let project of projects">
       <app-project-mini [title]="project.title" [backgroundUrl]="project.bgUrl">
       </app-project-mini>
