@@ -1,4 +1,4 @@
-<section class="project">
+<section class="project" *ngIf="!loading; else loadingProject">
   <header [ngStyle]="currentBackgroundProperties">
     <h1 class="text-uppercase">Título del proyecto</h1>
     <a ngbTooltip="Ver imagen a pantalla completa" placement="bottom" (click)="showLightbox(0)">
@@ -56,6 +56,10 @@
     </a>
   </footer>
 </section>
+
+<ng-template #loadingProject>
+  <app-loading></app-loading>
+</ng-template>
 
 <ng-image-fullscreen-view
   [images]="imageObject"

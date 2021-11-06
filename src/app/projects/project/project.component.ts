@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements OnInit {
+  loading = false;
+
   title: string = 'Title';
   backgroundImage: string = 'https://via.placeholder.com/1920x1080/f00/fff';
 
