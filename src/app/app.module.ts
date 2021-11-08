@@ -1,13 +1,14 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { UpIconComponent } from './layout/up-icon/up-icon.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
+    UpIconComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,12 @@ import { FooterComponent } from './layout/footer/footer.component';
     NgbModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: Window,
+      useValue: window
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
