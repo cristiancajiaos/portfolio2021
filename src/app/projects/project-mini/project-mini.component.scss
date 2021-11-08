@@ -10,6 +10,7 @@ a {
     flex-direction: column;
     justify-content: flex-end;
     cursor: pointer;
+    transition: box-shadow 0.1s linear;
 
     .project-mini-title {
       background-color: black;
@@ -22,7 +23,6 @@ a {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      transition: opacity 0.1s linear;
     }
 
     &:hover {
