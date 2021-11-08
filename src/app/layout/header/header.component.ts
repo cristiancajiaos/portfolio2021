@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isMenuCollapsed = false;
+  isMenuCollapsed = true;
+
+  menuOptions = [
+    { title: 'Proyectos', route: 'projects' },
+    { title: 'Contacto', route: 'contact'}
+  ];
 
   constructor() { }
 
@@ -16,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
   toggleCollapse(): void {
     this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
+
+  closeCollapse(): void {
+    this.toggleCollapse();
   }
 
 }
