@@ -1,0 +1,9 @@
+footer {
+  margin-bottom: 1rem;
+  
+  .show-contact {
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+}

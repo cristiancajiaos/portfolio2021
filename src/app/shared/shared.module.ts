@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading/loading.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
-    LoadingComponent
+    LoadingComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    LoadingComponent
+    LoadingComponent,
+    ContactComponent
   ]
 })
 export class SharedModule { }
