@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  loading = false;
+  loading = true;
 
   projects = [
     {
@@ -45,5 +45,9 @@ export class ProjectsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.loading = false;
+    }, 5000);
+  }
 }

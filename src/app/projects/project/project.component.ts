@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements OnInit {
-  loading = false;
+  loading = true;
 
   title: string = 'Title';
   backgroundImage: string = 'https://via.placeholder.com/1920x1080/f00/fff';
@@ -17,6 +17,8 @@ export class ProjectComponent implements OnInit {
 
   currentBackgroundProperties = {};
 
+  /* backgroundPosition: 'center', */
+
   backgroundDefaultProperties = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -25,6 +27,10 @@ export class ProjectComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.loading = false;
+    }, 5000);
+
     this.currentBackgroundProperties = {
       backgroundImage: `url(${this.backgroundImage})`,
       ...this.backgroundDefaultProperties,
