@@ -10,8 +10,8 @@ export class HeaderComponent implements OnInit {
   isMenuCollapsed = true;
 
   menuOptions = [
+    { title: 'Home', route: 'home'},
     { title: 'Proyectos', route: 'projects' },
-    { title: 'Contacto', route: 'contact'}
   ];
 
   constructor() { }
