@@ -2,7 +2,7 @@ import { PortfolioElement } from './../shared/interfaces/portfolio-element';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -17,5 +17,13 @@ export class ProjectService {
         return of({});
       })
     );
+  }
+
+  getProject(id: number): Observable<PortfolioElement> {
+    console.log(id);
+    return this.getProjects()
+      .pipe(
+        map(elements =>elements.filter(element => element.id === id)[0])
+      );
   }
 }
