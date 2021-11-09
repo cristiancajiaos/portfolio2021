@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -24,7 +25,8 @@ import { UpIconComponent } from './layout/up-icon/up-icon.component';
     AppRoutingModule,
     NgbModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     {

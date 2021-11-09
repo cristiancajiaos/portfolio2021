@@ -1,7 +1,7 @@
 <section class="projects" *ngIf="!loading; else loadingProjects">
   <div class="row">
-    <div class="col-12 col-lg-6" *ngFor="let project of projects">
-      <app-project-mini [title]="project.title" [backgroundUrl]="project.bgUrl">
+    <div class="col-12 col-lg-6" *ngFor="let portfolioElement of portfolioElements">
+      <app-project-mini [id]="portfolioElement.id" [title]="portfolioElement.title" [backgroundUrl]="portfolioElement.imgUrl">
       </app-project-mini>
     </div>
   </div>

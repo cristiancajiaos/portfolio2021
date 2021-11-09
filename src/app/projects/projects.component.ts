@@ -1,3 +1,5 @@
+import { PortfolioElement } from './../shared/interfaces/portfolio-element';
+import { ProjectService } from './project.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
   loading = true;
+  portfolioElements: PortfolioElement[] = [];
 
   projects = [
     {
@@ -43,11 +46,14 @@ export class ProjectsComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(
+    private project: ProjectService
+  ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
+    this.project.getProjects().subscribe((portfolioElements) => {
+      this.portfolioElements = portfolioElements
       this.loading = false;
-    }, 5000);
+    });
   }
 }
