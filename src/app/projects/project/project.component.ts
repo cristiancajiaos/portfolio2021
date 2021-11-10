@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { PortfolioElement } from './../../shared/interfaces/portfolio-element';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from './../project.service';
@@ -33,7 +34,8 @@ export class ProjectComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private project: ProjectService
+    private project: ProjectService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -53,8 +55,10 @@ export class ProjectComponent implements OnInit {
         this.backgroundImage = this.portfolioElement.imgUrl;
         this.setBackgroundImage();
         this.isPortfolioElement = true;
+        this.titleService.setTitle(`${this.portfolioElement.title} | Portafolio de Cristian Cajiao Skarnic`);
       } else {
         this.isPortfolioElement = false;
+        this.titleService.setTitle(`No existe proyecto asociado a esta ID | Portafolio de Cristian Cajiao Skarnic`);
       }
       this.loading = false;
     });
