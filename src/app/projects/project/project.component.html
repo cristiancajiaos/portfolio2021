@@ -5,7 +5,7 @@
         {{portfolioElement.title}}
         <small>({{portfolioElement.year}})</small>
       </h1>
-      <a ngbTooltip="Ver imagen a pantalla completa" placement="top" (click)="showLightbox(0)">
+      <a *ngIf="hasBackgroundImage" ngbTooltip="Ver imagen a pantalla completa" placement="top" (click)="showLightbox(0)">
         <i class="fas fa-expand fa-fw"></i>
       </a>
     </header>

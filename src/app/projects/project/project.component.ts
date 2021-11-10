@@ -18,7 +18,8 @@ export class ProjectComponent implements OnInit {
   isPortfolioElement = false;
 
   title: string = 'Title';
-  backgroundImage: string = 'https://via.placeholder.com/1920x1080/f00/fff';
+  backgroundImage: string = 'https://via.placeholder.com/1920x1080?text=Proyecto+sin+imagen';
+  hasBackgroundImage = false;
 
   showFlag = false;
   selectedImageIndex = -1;
@@ -26,12 +27,11 @@ export class ProjectComponent implements OnInit {
 
   currentBackgroundProperties = {};
 
-  /* backgroundPosition: 'center', */
-
   private projectSubscription: Subscription;
 
   backgroundDefaultProperties = {
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   };
 
@@ -54,7 +54,10 @@ export class ProjectComponent implements OnInit {
     this.projectSubscription = this.project.getProject(this.id).subscribe((project) => {
       if (project) {
         this.portfolioElement = project;
-        this.backgroundImage = this.portfolioElement.imgUrl;
+        if (this.portfolioElement.imgUrl) {
+          this.backgroundImage = this.portfolioElement.imgUrl;
+          this.hasBackgroundImage = true;
+        }
         this.setBackgroundImage();
         this.isPortfolioElement = true;
         this.titleService.setTitle(`${this.portfolioElement.title} | Portafolio de Cristian Cajiao Skarnic`);
