@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { PortfolioElement } from './../../shared/interfaces/portfolio-element';
 import { ActivatedRoute } from '@angular/router';
@@ -27,6 +28,8 @@ export class ProjectComponent implements OnInit {
 
   /* backgroundPosition: 'center', */
 
+  private projectSubscription: Subscription;
+
   backgroundDefaultProperties = {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -48,8 +51,7 @@ export class ProjectComponent implements OnInit {
   }
 
   getProject(): void {
-    this.project.getProject(this.id).subscribe((project) => {
-      console.log(project);
+    this.projectSubscription = this.project.getProject(this.id).subscribe((project) => {
       if (project) {
         this.portfolioElement = project;
         this.backgroundImage = this.portfolioElement.imgUrl;
@@ -62,6 +64,10 @@ export class ProjectComponent implements OnInit {
       }
       this.loading = false;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.projectSubscription.unsubscribe();
   }
 
   setBackgroundImage(): void {

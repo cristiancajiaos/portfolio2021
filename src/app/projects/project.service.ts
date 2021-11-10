@@ -20,10 +20,8 @@ export class ProjectService {
   }
 
   getProject(id: number): Observable<PortfolioElement> {
-    console.log(id);
-    return this.getProjects()
-      .pipe(
-        map(elements =>elements.filter(element => element.id === id)[0])
-      );
+    return this.getProjects().pipe(
+      map(elements =>elements.filter(element => element.id === id)[0])
+    );
   }
 }

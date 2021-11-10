@@ -1,6 +1,7 @@
 import { PortfolioElement } from './../shared/interfaces/portfolio-element';
 import { ProjectService } from './project.service';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-projects',
@@ -11,14 +12,20 @@ export class ProjectsComponent implements OnInit {
   loading = true;
   portfolioElements: PortfolioElement[] = [];
 
+  private projectSubscription: Subscription;
+
   constructor(
-    private project: ProjectService
+    private project: ProjectService,
   ) {}
 
   ngOnInit(): void {
-    this.project.getProjects().subscribe((portfolioElements) => {
+    this.projectSubscription = this.project.getProjects().subscribe((portfolioElements) => {
       this.portfolioElements = portfolioElements
       this.loading = false;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.projectSubscription.unsubscribe();
   }
 }
